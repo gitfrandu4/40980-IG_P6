@@ -1,0 +1,55 @@
+<!-- This is a static file -->
+<!-- served from your routes in server.js -->
+
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title>IG_P6</title>
+		<link rel="stylesheet" href="/style.css" />
+	</head>
+	<body>
+		<div class="info">Práctica 6 - Sistema Planetario</div>
+
+		<!-- Controls display for spaceship view -->
+		<div id="spaceship-controls" class="controls-display">
+			<div class="controls-title">Controles de la Nave:</div>
+			<div class="controls-container">
+				<div class="control-item">
+					<span class="key-symbol">W</span> Adelante
+				</div>
+				<div class="control-item"><span class="key-symbol">S</span> Atrás</div>
+				<div class="control-item">
+					<span class="key-symbol">A</span> Izquierda
+				</div>
+				<div class="control-item">
+					<span class="key-symbol">D</span> Derecha
+				</div>
+				<div class="control-item"><span class="key-symbol">Q</span> Arriba</div>
+				<div class="control-item"><span class="key-symbol">E</span> Abajo</div>
+				<div class="control-item">
+					<span class="key-symbol">⬆️⬇️⬅️➡️</span> Rotar
+				</div>
+			</div>
+		</div>
+
+		<!-- Controls display for system view -->
+		<div id="system-controls" class="controls-display">
+			<div class="controls-title">Controles del Sistema:</div>
+			<div class="control-item">
+				<span class="key-symbol">🖱️</span> Click + Arrastrar para rotar cámara
+			</div>
+		</div>
+
+		<!--Carga de módulos, indicando release de threejs-->
+		<script type="importmap">
+			{
+				"imports": {
+					"three": "https://unpkg.com/three@0.152.1/build/three.module.js",
+					"three/": "https://cdn.skypack.dev/three@0.152.1/"
+				}
+			}
+		</script>
+		<script src="/index.js" type="module"></script>
+	</body>
+</html>

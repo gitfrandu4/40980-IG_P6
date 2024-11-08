@@ -1,0 +1,94 @@
+/* avoid the arrows to move the windows and take the full screen */
+html,
+body {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;
+}
+
+.info {
+	position: absolute;
+	top: 30px;
+	left: 50%;
+	transform: translateX(-50%);
+	color: #00ffcc;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.75);
+	padding: 15px;
+	border-radius: 8px;
+	box-shadow: 0px 0px 15px rgba(0, 255, 204, 0.3);
+	font-family: Monospace;
+	font-size: 16px;
+	z-index: 1;
+}
+
+.controls-display {
+	position: absolute;
+	bottom: 60px;
+	left: 10px;
+	width: 200px;
+	color: #fff;
+	font-weight: bold;
+	background-color: rgba(0, 0, 0, 0.5);
+	z-index: 1;
+	font-family: Monospace;
+	padding: 10px;
+	border-radius: 10px;
+	line-height: 1.5;
+	font-size: 12px;
+	text-align: left;
+}
+
+/* Contenedor principal de controles */
+.controls-display {
+	position: fixed;
+	bottom: 20px;
+	left: 20px;
+	background: rgba(0, 0, 0, 0.7);
+	padding: 15px;
+	border-radius: 8px;
+	z-index: 1000;
+	height: min-content;
+}
+
+/* Título de los controles */
+.controls-title {
+	font-size: 14px;
+	color: #00ffcc;
+	font-weight: bold;
+	margin-bottom: 8px;
+}
+
+/* Contenedor de los controles */
+.controls-container {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 10px;
+}
+
+/* Elemento individual de control */
+.control-item {
+	display: flex;
+	align-items: center;
+	gap: 5px;
+}
+
+/* Teclas y símbolos */
+.key-symbol {
+	padding: 5px;
+	border-radius: 4px;
+	background: #333;
+	color: #00ffcc;
+}
+
+/* Estado oculto */
+#spaceship-controls {
+	display: none;
+}
+
+.lil-gui {
+	position: absolute !important;
+	right: 0 !important;
+}
