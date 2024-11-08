@@ -39,7 +39,7 @@ Este proyecto es una representación interactiva del sistema solar utilizando **
 - **Vista del Sistema**: Una visión general del sistema solar.
 - **Vista de la Nave**: Una vista en primera persona desde una nave espacial que puede explorar el sistema.
 
-<img src="images/planetary-simulation.gif" alt="Sistema Solar Interactivo" width="800">
+<img src="./images/planetary-simulation.gif" alt="Sistema Solar Interactivo" width="800">
 
 ### Ejemplo mínimo
 
