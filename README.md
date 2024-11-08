@@ -16,7 +16,9 @@
     - [Asistentes](#asistentes)
     - [Control orbital](#control-orbital)
     - [Coordenadas del puntero](#coordenadas-del-puntero)
-    - [Para simular órbitas de planetas alrededor de una estrella:](#para-simular-órbitas-de-planetas-alrededor-de-una-estrella)
+    - [Rotaciones arbitrarias](#rotaciones-arbitrarias)
+  - [Detalles Técnicos](#detalles-técnicos)
+  - [Mejoras Futuras](#mejoras-futuras)
   - [Tarea: Sistema Planetario](#tarea-sistema-planetario)
     - [Características](#características)
     - [Conceptos Aplicados](#conceptos-aplicados)
@@ -180,9 +182,9 @@ Ejercicio:
 
 * Aplica `Raycaster` para seleccionar esferas en tu escena y cambiar su color al hacer clic.
 
-Rotaciones arbitrarias
+### Rotaciones arbitrarias
 
-### Para simular órbitas de planetas alrededor de una estrella:
+Para simular órbitas de planetas alrededor de una estrella:
 
 ```javascript
 function createPlanet(distance, size, speed, color) {
@@ -198,6 +200,26 @@ function createPlanet(distance, size, speed, color) {
     planet.position.z = Math.sin(time * planet.userData.speed) * planet.userData.distance;
   });
 ```
+
+## Detalles Técnicos
+
+- **Texturas**: Las texturas se cargan utilizando `THREE.TextureLoader()` y se aplican a **materiales Phong** para permitir reflejos especulares.
+- **Iluminación**:
+  - **Luz Ambiental**: Proporciona una iluminación base para todos los objetos.
+  - **Luz Puntual (Sol)**: Simula la luz emitida por el sol, afectando a los planetas y otros objetos.
+- **Materiales**:
+  - **MeshPhongMaterial**: Utilizado para planetas y objetos que requieren interacción con la luz.
+  - **MeshBasicMaterial**: Utilizado para el sol y el fondo estelar, ya que no necesitan reaccionar a la iluminación de la escena.
+- **Física**:
+  - **Órbitas Planetarias**: Calculadas y animadas mediante actualización de ángulos y posiciones en cada frame.
+  - **Rotación de Planetas**: Cada planeta rota sobre su propio eje para simular el día planetario.
+
+## Mejoras Futuras
+
+* **Añadir Más Planetas o Satélites**: Como Plutón o satélites de otros planetas.
+* **Implementar Colisiones**: Detectar colisiones entre la nave y planetas para mayor interactividad.
+* **Añadir Sonido**: Incorporar efectos de sonido para una experiencia más inmersiva.
+* **Optimización**: Mejorar el rendimiento en dispositivos de bajos recursos.
 
 ## Tarea: Sistema Planetario
 
@@ -266,6 +288,7 @@ Se utilizan materiales avanzados y texturas detalladas para los planetas y la na
     specular: new THREE.Color('grey'),
   });
   ```
+  - **Materiales Phong**: Se utilizan materiales Phong para los planetas, permitiendo reflejos especulares y respuestas realistas a la iluminación.
 
 - **Transparencias y Nubes**: Para simular la atmósfera terrestre con capas de nubes.
 
