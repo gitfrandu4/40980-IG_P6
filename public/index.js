@@ -42,10 +42,10 @@ function init() {
 	camera.position.set(0, 50, 100);
 
 	spaceshipCamera = new THREE.PerspectiveCamera(
-		60,
-		window.innerWidth / window.innerHeight,
-		0.1,
-		1000
+		60, // Field of view
+		window.innerWidth / window.innerHeight, // Aspect ratio
+		10, // Near clipping plane
+		1000 // Far clipping plane
 	);
 
 	currentCamera = camera;
@@ -80,7 +80,7 @@ function init() {
 	const milkyWayGeometry = new THREE.SphereGeometry(500, 64, 64);
 	const milkyWayMaterial = new THREE.MeshBasicMaterial({
 		map: milkyWayTexture,
-		side: THREE.BackSide,
+		side: THREE.BackSide, // Render on the back side of the mesh
 	});
 	const milkyWay = new THREE.Mesh(milkyWayGeometry, milkyWayMaterial);
 	scene.add(milkyWay);
@@ -392,7 +392,7 @@ function createSpaceship() {
 
 	// Create spaceship with reflective material
 	const geometry = new THREE.SphereGeometry(2, 32, 32);
-	const material = new THREE.MeshBasicMaterial({
+	const material = new THREE.MeshPhongMaterial({
 		envMap: cubeRenderTarget.texture,
 		reflectivity: 1.0,
 	});
